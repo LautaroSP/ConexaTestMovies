@@ -1,0 +1,83 @@
+# =========================
+# Visual Studio / .NET
+# =========================
+
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+
+## Visual Studio cache/options
+.vs/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider / VSCode
+.idea/
+.vscode/
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+## Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+## Publish output
+publish/
+app.publish/
+
+## SQLite / local databases
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+## Logs
+*.log
+
+## OS generated
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Backup & temp files
+*.bak
+*.tmp
+*.temp
+*~
+
+## Resharper
+_ReSharper*/
+*.DotSettings.user
+
+## Crash dumps
+*.dmp
+
+## Visual Studio profiler
+*.vsp
+*.vspx
+
+## Entity Framework (por si algún día aparece)
+Migrations/
+__EFMigrationsHistory/
+
+## Environment / secrets
+*.env
+secrets.json

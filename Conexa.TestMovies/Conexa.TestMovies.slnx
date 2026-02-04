@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="../Conexa.TestMovies.ApiClients/Conexa.TestMovies.ApiClients.csproj" />
+  <Project Path="../Conexa.TestMovies.Application/Conexa.TestMovies.Application.csproj" />
+  <Project Path="../Conexa.TestMovies.Domain/Conexa.TestMovies.Domain.csproj" />
+  <Project Path="../Conexa.TestMovies.Persistence/Conexa.TestMovies.Persistence.csproj" />
+  <Project Path="../Conexa.TestMovies.Test/Conexa.TestMovies.Test.csproj" />
+  <Project Path="Conexa.TestMovies.csproj" />
+</Solution>
