@@ -6,7 +6,7 @@ namespace Conexa.TestMovies.Persistence.Repository.Shared
 {
     public class BaseRepository<T> : IAsyncRepository<T> where T : BaseEntity
     {
-        private readonly AppDbContext _ctx;
+        protected readonly AppDbContext _ctx;
 
         public BaseRepository(AppDbContext appDbContext)
         {

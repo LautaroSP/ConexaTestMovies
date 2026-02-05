@@ -4,8 +4,6 @@ namespace Conexa.TestMovies.Application.Models
 {
     public class BaseResponse
     {
-        private bool v;
-
         public bool IsSuccesful { get; set; }
         public object? Result { get; set; }
         public int Code { get; set; }

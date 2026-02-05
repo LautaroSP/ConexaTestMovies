@@ -4,5 +4,6 @@ namespace Conexa.TestMovies.Domain.Interfaces
 {
     public interface IMovieRepository : IAsyncRepository<Movie>
     { 
+        Task<Movie> GetByTitleAsync(string title);
     }
 }

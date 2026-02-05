@@ -1,4 +1,5 @@
 ﻿using Conexa.TestMovies.Domain.Shared;
+using System.Runtime.CompilerServices;
 
 namespace Conexa.TestMovies.Domain.Entities
 {
@@ -13,5 +14,13 @@ namespace Conexa.TestMovies.Domain.Entities
         public string? Email { get; set; }
         public string? PasswordHash { get; set; }
         public int IdRole { get; set; }
+
+        public User(string? username, string? email, string? passwordHash, int idRole)
+        {
+            Username = username;
+            Email = email;
+            PasswordHash = passwordHash;
+            IdRole = idRole;    
+        }
     }
 }
