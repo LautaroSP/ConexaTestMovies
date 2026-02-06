@@ -28,7 +28,7 @@ namespace Conexa.TestMovies.Controllers.v1
             _mediator = mediator;
         }
 
-        [HttpGet("/api/starwars")]
+        [HttpGet("/starwars")]
         [ProducesResponseType(typeof(MoviesVM), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [EndpointSummary("Obtengo la lista de peliculas de la API https://www.swapi.tech/ ")]
@@ -39,7 +39,7 @@ namespace Conexa.TestMovies.Controllers.v1
         }
 
         [Authorize(Policy = "AdminOnly")]
-        [HttpPost("/api/syncMovies")]
+        [HttpPost("/syncMovies")]
         [ProducesResponseType(typeof(List<Movie>),StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,7 +52,7 @@ namespace Conexa.TestMovies.Controllers.v1
 
 
         [Authorize(Policy = "AdminOnly")]
-        [HttpPost("/api/delete/{id}")]
+        [HttpPost("delete/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
@@ -63,7 +63,7 @@ namespace Conexa.TestMovies.Controllers.v1
             return ProcessResult(result);
         }
 
-        [HttpGet("/api/movies")]
+        [HttpGet("listMovies")]
         [ProducesResponseType(typeof(List<Movie>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [EndpointSummary("Se obtienen todas las peliculas")]
@@ -74,7 +74,7 @@ namespace Conexa.TestMovies.Controllers.v1
         }
 
         [Authorize(Policy = "AdminOnly")]
-        [HttpPut("api/movies/update/{id}")]
+        [HttpPut("update/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
@@ -86,7 +86,7 @@ namespace Conexa.TestMovies.Controllers.v1
         }
 
         [Authorize(Policy = "UserOnly")]
-        [HttpGet("api/movies/details/{id}")]
+        [HttpGet("details/{id}")]
         [ProducesResponseType(typeof(Movie),StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
@@ -98,7 +98,7 @@ namespace Conexa.TestMovies.Controllers.v1
         }
 
         [Authorize(Policy = "AdminOnly")]
-        [HttpPost("/api/create")]
+        [HttpPost("create")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]

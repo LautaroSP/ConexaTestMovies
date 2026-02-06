@@ -18,24 +18,30 @@ namespace Conexa.TestMovies.Application.BackGroundServices.CronSyncMovies
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                var nextRun = DateTime.Now.AddDays(1);
-                if (DateTime.Now > nextRun)
-                    nextRun = nextRun.AddDays(1);
-
-                await Task.Delay(nextRun - DateTime.Now, stoppingToken);
-
-                using var scope = _scopeFactory.CreateScope();
-                var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
-
                 try
                 {
+                    var now = DateTime.Now;
+                    var nextRun = new DateTime(now.Year, now.Month, now.Day, 3, 0, 0); 
+
+                    if (now > nextRun)
+                        nextRun = nextRun.AddDays(1);
+
+                    var delay = nextRun - now;
+                    await Task.Delay(delay, stoppingToken);
+
+                    using var scope = _scopeFactory.CreateScope();
+                    var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
+
                     await mediator.Send(new SyncMoviesWithApiClientCommand(), stoppingToken);
+                }
+                catch (TaskCanceledException)
+                {
                 }
                 catch (Exception ex)
                 {
-                    // loggear error acá
                 }
             }
         }
+
     }
 }
