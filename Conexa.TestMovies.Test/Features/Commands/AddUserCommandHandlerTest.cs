@@ -68,7 +68,7 @@ namespace Conexa.TestMovies.Tests.Application.Features.Commands.AddUser
 
             _userRepositoryMock
                 .Setup(repo => repo.AddAsync(It.IsAny<User>()))
-                .ReturnsAsync((User user) => user);
+                .ReturnsAsync((User u) => u);
 
             // Act
             var result = await _handler.Handle(command, CancellationToken.None);
@@ -76,16 +76,9 @@ namespace Conexa.TestMovies.Tests.Application.Features.Commands.AddUser
             // Assert
             result.ShouldNotBeNull();
             result.IsSuccesful.ShouldBeTrue();
-            result.Code.ShouldBe(200);
+            result.Code.ShouldBe(201);
             result.Errors.ShouldBeNull();
-            result.Result.ShouldNotBeNull();
-
-            var createdUser = result.Result as User;
-            createdUser.ShouldNotBeNull();
-            createdUser.Username.ShouldBe(command.UserName);
-            createdUser.Email.ShouldBe(command.Email);
-            createdUser.IdRole.ShouldBe(command.IdRole);
-            createdUser.PasswordHash.ShouldNotBeNullOrWhiteSpace();
+            result.Result.ShouldBe(null);
 
             _userRepositoryMock.Verify(repo => repo.AddAsync(It.IsAny<User>()), Times.Once);
         }

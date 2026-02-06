@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Conexa.TestMovies.Application.Features.Querys.GetAllMovies
 {
-    internal class GetAllMoviesQueryHandler : IRequestHandler<GetAllMoviesQuery, BaseResponse>
+    public class GetAllMoviesQueryHandler : IRequestHandler<GetAllMoviesQuery, BaseResponse>
     {
         private readonly IMovieRepository _moviesRepository;
         public GetAllMoviesQueryHandler(IMovieRepository movieRepository)

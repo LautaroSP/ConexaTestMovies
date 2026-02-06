@@ -18,11 +18,11 @@ namespace Conexa.TestMovies.Application.Features.Commands.DeleteMovie
         {
             var movie = await _movieRepository.GetByIdAsync(request.Id);
             if (movie == null)
-                return BaseResponse.Failure(false, new List<string> { "No se encontro la pelicula" }, 404);
+                return BaseResponse.Failure(null,new List<string> { "No se encontro la pelicula" }, 404);
 
             await _movieRepository.DeleteAsync(movie);
 
-            return BaseResponse.Success(movie);
+            return BaseResponse.Success(200);
         }
     }
 }

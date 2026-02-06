@@ -18,7 +18,7 @@ namespace Conexa.TestMovies.Controllers.v1
         }
 
         [HttpPost("register")]
-        [ProducesResponseType(typeof(UserVM),StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [EndpointSummary("Registra un nuevo usuario")]
         public async Task<IActionResult> RegisterUser([FromBody] AddUserRequest request)

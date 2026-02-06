@@ -25,10 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Querys\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Conexa.TestMovies.Application\Conexa.TestMovies.Application.csproj" />
     <ProjectReference Include="..\Conexa.TestMovies.Domain\Conexa.TestMovies.Domain.csproj" />
   </ItemGroup>

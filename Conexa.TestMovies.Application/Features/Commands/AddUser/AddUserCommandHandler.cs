@@ -22,7 +22,7 @@ namespace Conexa.TestMovies.Application.Features.Commands.AddUser
             var newUser = new User(request.UserName ,request.Email, HashHelper.HashPassword(request.Password), request.IdRole);
 
             await _userRepository.AddAsync(newUser);
-            return BaseResponse.Success(newUser, 200);
+            return BaseResponse.Success(null,201);
         }
 
 

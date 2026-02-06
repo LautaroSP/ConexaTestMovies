@@ -55,7 +55,18 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(opt =>
+{
+    opt.AddPolicy("AdminOnly", policy =>
+    {
+        policy.RequireClaim("IdRole", "1");
+    });
+
+    opt.AddPolicy("UserOnly", policy =>
+    {
+        policy.RequireClaim("IdRole", "2");
+    });
+});
 
 var app = builder.Build();
 
