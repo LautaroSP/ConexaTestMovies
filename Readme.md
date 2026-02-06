@@ -13,18 +13,21 @@ Guia para ejecutar el proyecto localmente.
 ### Pasos para Ejecutar el Proyecto
 1. Clona el repositorio:
    https://github.com/LautaroSP/ConexaTestMovies
-2. Abrir la solución en Visual Studio.
-3. Compilar solucion.
-   3.a - En caso de no compilar, restaurar paquetes NuGet.
-4. Ejecutar las migraciones para crear la bdd con sus entidades:
+2. Abrir la solución en Visual Studio. Se encuentra en la carpeta (Conexa.TestMovies)
+3. Verificar el proyecto de inicio. Debe ser Conexa.TestMovies
+   - En caso de que no sea el proyecto de inicio hacer doble click sobre Conexa.TestMovies(webApi)
+   - Buscar Establecer proyecto de inicio y hacer click.
+4. Compilar solucion.
+   4.a - En caso de no compilar, restaurar paquetes NuGet.
+5. Ejecutar las migraciones para crear la bdd con sus entidades:
    - Abrir la consola del administrador de paquetes en Visual Studio.
    - Seleccionar el proyecto 'Conexa.TestMovies.Persistance' como proyecto predeterminado.
    - Ejecutar el comando:
      ```
      Update-Database
      ```
-5. Ejecutar la aplicación en https
-6. Abrir el navegador y navegar a:
+6. Ejecutar la aplicación en https
+7. Abrir el navegador y navegar a:
    https://localhost:7191/swagger/index.html para acceder a la documentación de la API.
 
 ### Librerias Utilizadas
